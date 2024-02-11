@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #main-page {
+            display: block;
+        }
+
+        #second-page {
+            display: none;
+        }
+
+        #left-button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        #right-button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="main-page">
+    <h1>Will you marry me?</h1>
+    <button id="left-button" onclick="showImage()">Yes</button>
+    <button id="right-button" onclick="handleNo()">No</button>
+</div>
+
+<div id="second-page">
+    <h1>Congratulations!</h1>
+    <img src="cute_image.jpg" alt="Cute Image">
+</div>
+
+<script>
+    let noButtonClickCount = 0;
+
+    function showImage() {
+        document.getElementById("main-page").style.display = "none";
+        document.getElementById("second-page").style.display = "block";
+    }
+    let noButtonTexts = [
+    "Please, marry me!",
+    "Just think about it once",
+    "I promise I'll cook for you every day!",
+    "Life would be so much better with you as my wife",
+    "Imagine the adventures we'll have together",
+    "You complete me, say yes!",
+    "We can have a cute puppy together",
+    "Our love story is just beginning",
+    "Let's build a future together",
+    "I'll always make you laugh, marry me!",
+    "Together we can conquer the world",
+    "You're my sunshine, marry me",
+    "I can't imagine my life without you",
+    "You and me, forever and always",
+    "We'll be the perfect team",
+    "Marrying you is my biggest dream",
+    "Our love is a journey, let's take the next step",
+    "A lifetime of love awaits us",
+    "You're the missing piece to my puzzle",
+    "Our love story deserves a happy ending",
+    "Let's create a lifetime of memories",
+    "Marry me and make me the happiest person alive",
+    "I promise to cherish and love you always",
+    "You're the love of my life, say yes!",
+    "Our love is written in the stars",
+    "Marry me and be my forever Valentine",
+    "You're my happily ever after",
+    "Our love is the greatest adventure",
+    "A lifetime of love and laughter awaits",
+    "With you, every day feels like Valentine's Day",
+    "Together, we're unstoppable",
+    "Marry me and let's grow old together",
+    "You're the one I've been waiting for",
+    "Our love is a masterpiece, let's frame it with marriage",
+    "Say yes and make my heart skip a beat",
+    "You're my everything, marry me",
+    "Our love is the sweetest symphony",
+    "Let's dance through life together",
+    "Say yes and be my forever love",
+    "Marry me and let's build a beautiful life together"
+];
+
+function handleNo() {
+    noButtonClickCount++;
+
+    // Increase left button size
+    document.getElementById("left-button").style.fontSize = (50 + noButtonClickCount * 8) + "px";
+
+    // if (noButtonClickCount <= noButtonTexts.length) {
+    //     document.getElementById("right-button").innerHTML = noButtonTexts[noButtonClickCount - 1];
+    // } else {
+    //     document.getElementById("right-button").innerHTML = "I've run out of creative proposals, but the answer is still yes!";
+    // }
+
+    // Hide right button if it goes off screen
+    if (document.getElementById("left-button").offsetWidth > window.innerWidth / 2) {
+        document.getElementById("right-button").style.display = "none";
+    }
+}
+
+    // function handleNo() {
+    //     noButtonClickCount++;
+
+    //     if (noButtonClickCount === 1) {
+    //         document.getElementById("right-button").innerHTML = "Please, marry me!";
+    //     } else if (noButtonClickCount === 2) {
+    //         document.getElementById("right-button").innerHTML = "Just think about it once";
+    //     }
+    //     // Add more variations as needed
+
+    //     // Increase left button size
+    //     document.getElementById("left-button").style.fontSize = (50 + noButtonClickCount * 8) + "px";
+
+        
+
+    //     // Hide right button if it goes off screen
+    //     if (document.getElementById("left-button").offsetWidth > window.innerWidth / 2) {
+    //         document.getElementById("right-button").style.display = "none";
+    //     }
+    // }
+</script>
+
+</body>
+</html>
